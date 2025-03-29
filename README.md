@@ -20,7 +20,7 @@ $ sudo dpkg -i ttf-ms-win11-*.deb
 ```sh
 $ mkdir -p extract/DEBIAN
 $ mkdir build
-$ dpkg -X package.deb extract/ # 将主要资源解压到 extract/
+$ dpkg -X package.deb extract/ # 将字体资源解压到 extract/
 $ dpkg -e package.deb extract/DEBIAN # 然后对 extract/ 和 extract/DEBIAN 进行修改
-$ dpkg-deb -Zgzip -b extract/ build/package.deb # 压缩回 deb，主要不要用 zstd
+$ dpkg-deb -Zgzip -b extract/ build/package.deb # 压缩回 deb，务必注意为了兼容低版本系统请不要用默认的 zstd 压缩方式！
 ```
